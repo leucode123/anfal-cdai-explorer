@@ -1,0 +1,11 @@
+_site/
+.Rhistory
+.RData
+.Ruserdata
+.DS_Store
+*.rds
+*.RData
+*.csv
+rsconnect/
+renv/library/
+!docs/shinylive/webr/packages/metadata.rds
