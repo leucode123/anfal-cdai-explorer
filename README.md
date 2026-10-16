@@ -1,5 +1,7 @@
 # Week 12 CDAI Explorer
 
+[Open the live app](https://leucode123.github.io/anfal-cdai-explorer/)
+
 A Shiny research app for exploring the five-group week-12 CDAI models in manuscript V2 dated 16 October 2026. It supports the ratio-based model and the absolute-count model, with the same clinical covariates and fixed coefficients as the analysis.
 
 The app runs locally in R or in the browser through Shinylive and GitHub Pages. It does not refit models, load a patient dataset, collect identifiers, or store entered values. Only fixed aggregate coefficients, age spline knots, outcome boundaries, and development ranges are included.
