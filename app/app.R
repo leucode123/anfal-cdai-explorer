@@ -98,9 +98,10 @@ server <- function(input, output, session) {
   observeEvent(input$reset, {
     updateSelectInput(session, "gender", selected = "Male")
     updateSelectInput(session, "previous_ibd_related_surge", selected = "No")
+    # Numeric payloads restore number inputs reliably in the browser runtime.
     for (model_id in names(model_parameters$models)) {
       for (v in names(model_parameters$models[[model_id]]$limits)) {
-        updateNumericInput(session, v, value = unname(round(model_parameters$models[[model_id]]$limits[[v]]["default"], 3)))
+        session$sendInputMessage(v, list(value = as.numeric(round(model_parameters$models[[model_id]]$limits[[v]]["default"], 3))))
       }
     }
   })
