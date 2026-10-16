@@ -100,7 +100,7 @@ server <- function(input, output, session) {
     updateSelectInput(session, "previous_ibd_related_surge", selected = "No")
     for (model_id in names(model_parameters$models)) {
       for (v in names(model_parameters$models[[model_id]]$limits)) {
-        updateNumericInput(session, v, value = round(model_parameters$models[[model_id]]$limits[[v]]["default"], 3))
+        updateNumericInput(session, v, value = unname(round(model_parameters$models[[model_id]]$limits[[v]]["default"], 3)))
       }
     }
   })
